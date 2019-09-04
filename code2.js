@@ -1,8 +1,13 @@
-p=Promise.resolve();
+module.exports= ()=>{
 
-for(let i=1; i<10; i++){
+    fakeArray= [4,5,9,2,1,0,6,7,9,2,0,0,9,8,7];
+
+    p=Promise.resolve();
+
+    for(let i=1; i<fakeArray.length; i++){
     p= p.then(()=>{
-        console.log("wait 30 sec: "+i);
+        console.log(fakeArray[i-1]);
+        console.log("wait 30 sec: ");
         return new Promise((resolve, reject)=>{
             setTimeout(resolve,1000);
         });
@@ -19,3 +24,5 @@ for(let i=1; i<10; i++){
     });
 
 }
+}
+
